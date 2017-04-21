@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>StandSitSkill</title>
+		<script type="text/javascript" src="mind-framework.js"></script>
+		<script type="text/javascript">
+			mind.init({callback: function(robot) {
+				skillID="StandSitSkill";
+				robot.connectSkill({
+					skillID: skillID
+				});
+				document.getElementById("stand").onclick = function() {
+          console.log("sending stand command");
+					robot.sendData({
+						skillID: skillID,
+						data: "stand"
+					})
+				}
+				document.getElementById("sit").onclick = function() {
+          console.log("sending sit command");
+					robot.sendData({
+						skillID: skillID,
+						data: "sit"
+					})
+				}
+			}});
+		</script>
+	</head>
+	<body>
+		<button id="stand">Stand!</button>
+		<button id="sit">Sit</button>
+	</body>
+</html>
