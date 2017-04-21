@@ -13,8 +13,6 @@
 *   mind build && mind pack && mind run
 *
 *   HEXA should now stand up as soon as the skill is started.
-*
-*
 */
 
 import (
@@ -25,6 +23,19 @@ import (
   "time"
   "math"
 )
+
+/*
+To develop a Skill, implement the skill.Base interface which is defined as:
+
+type Interface interface {
+    OnStart()             // Called when Skill is started
+    OnClose()             // Called when Skill is closed
+    OnConnect()           // Called when Skill is connected
+    OnDisconnect()        // Called when Skill is disconnected
+    OnRecvJSON([]byte)    // Called when remote sent data
+    OnRecvString(string)  // Called when remote sent a string
+}
+*/
 
 func (d *templateSkill) OnStart() {
   hexabody.Start()

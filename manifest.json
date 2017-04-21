@@ -1,0 +1,9 @@
+{
+ "name": "templateSkill",
+ "skillID": "9fdb98fd9feef97bd8c4e14r425ac196",
+ "author": "example@vincross.com",
+ "version": "1.0.2",
+ "remote": {
+     "orientation": "portrait"
+ }
+}

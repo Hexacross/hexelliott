@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>templateSkill</title>
+    <script src="mind-framework.js"></script>
+    <script type="text/javascript">
+      mind.init({
+        callback: function(hexa) {
+          skillID="templateSkill";
+  				hexa.connectSkill({
+  					skillID: skillID
+  				});
+
+          document.getElementById("start").onclick = function() {
+  					hexa.sendData({
+  						skillID: skillID,
+  						data: "start"
+  					})
+  				}
+  				document.getElementById("stop").onclick = function() {
+  					hexa.sendData({
+  						skillID: skillID,
+  						data: "stop"
+  					})
+  				}
+        }
+
+        error: function(err) { }
+      })
+    </script>
+  </head>
+
+  <body>
+    <button id="start">Start</button>
+		<button id="stop">Stop</button>
+
+  </body>
+</html>
