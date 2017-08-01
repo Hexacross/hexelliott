@@ -3,6 +3,7 @@
   <head>
     <title>templateSkill</title>
     <script src="mind-framework.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script type="text/javascript">
       mind.init({
         callback: function(hexa) {
@@ -23,16 +24,27 @@
   						data: "stop"
   					})
   				}
+
         }
 
         error: function(err) { }
       })
+      $("action").click(function() {
+        var $this = $(this)
+        $this.toggleClass('action')
+        if($this.hasClass('action')){
+          $this.text('Clicked');
+        } else {
+          $this.text('Released');
+        }
+      });
     </script>
   </head>
 
   <body>
     <button id="start">Start</button>
 		<button id="stop">Stop</button>
+    <button class="action">Action</button>
 
   </body>
 </html>
